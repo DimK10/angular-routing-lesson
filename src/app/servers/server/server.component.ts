@@ -22,7 +22,7 @@ export class ServerComponent implements OnInit, OnDestroy {
     const id = +this.route.snapshot.params['id'];
     this.server = this.serversService.getServer(id);
     this.paramsSubscription = this.route.params.subscribe((params: Params) => {
-      this.serversService.getServer(+params['id']);
+      this.server = this.serversService.getServer(+params['id']);
     });
   }
 
