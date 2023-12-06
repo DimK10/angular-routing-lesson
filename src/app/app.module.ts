@@ -35,8 +35,8 @@ import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.s
     ServersService,
     AuthService,
     AuthGuard,
-    ServerResolver,
     CanDeactivateGuard,
+    ServerResolver,
   ],
   bootstrap: [AppComponent],
 })
