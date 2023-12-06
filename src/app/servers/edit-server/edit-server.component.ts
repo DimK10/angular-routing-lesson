@@ -32,6 +32,7 @@ export class EditServerComponent
     this.route.fragment.subscribe();
     const id = +this.route.snapshot.params['id'];
     this.server = this.serversService.getServer(id);
+    // Subscribe to route params to update the id if params change
     this.route.params.subscribe((params: Params) => {
       this.server = this.serversService.getServer(+params['id']);
     });
@@ -62,7 +63,7 @@ export class EditServerComponent
     ) {
       return confirm('Do you want to discard the changes?');
     } else {
-      return false;
+      return true;
     }
   }
 }

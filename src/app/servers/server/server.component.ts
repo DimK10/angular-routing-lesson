@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ServersService } from '../servers.service';
-import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Data, Router } from '@angular/router';
 
 @Component({
@@ -9,9 +8,10 @@ import { ActivatedRoute, Data, Router } from '@angular/router';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css'],
 })
-export class ServerComponent implements OnInit, OnDestroy {
+export class ServerComponent implements OnInit {
   server: { id: number; name: string; status: string };
-  paramsSubscription: Subscription;
+
+  // paramsSubscription: Subscription;
 
   constructor(
     private serversService: ServersService,
@@ -30,9 +30,10 @@ export class ServerComponent implements OnInit, OnDestroy {
     // });
   }
 
-  ngOnDestroy(): void {
-    this.paramsSubscription.unsubscribe();
-  }
+  //
+  // ngOnDestroy(): void {
+  //   this.paramsSubscription.unsubscribe();
+  // }
 
   onEdit() {
     this.router.navigate(['edit'], {
